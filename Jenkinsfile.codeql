@@ -6,5 +6,16 @@ pipeline {
                 echo "CodeQL analysis"
             }
         }
+        stage('git checkout') {
+            steps {
+                // Clean workspace
+                deleteDir()
+
+                // Checkout code from Git
+                checkout([$class: 'GitSCM',
+                        branches: [[name: '*/master']], // Use 'master' for the main branch
+                        userRemoteConfigs: [[url: 'https://github.com/KaranChadha10/codeql_poc.git']]])
+            }
+        }
     }
 }
