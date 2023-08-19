@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('CodeQL Analysis') {
+        stage('starting point') {
             steps {
                 echo "CodeQL analysis"
             }
@@ -13,7 +13,7 @@ pipeline {
 
                 // Checkout code from Git
                 checkout([$class: 'GitSCM',
-                        branches: [[name: '*/master']], // Use 'master' for the main branch
+                        branches: [[name: '*/master']], //z Use 'master' for the main branch
                         userRemoteConfigs: [[url: 'https://github.com/KaranChadha10/codeql_poc.git']]])
             }
         }
