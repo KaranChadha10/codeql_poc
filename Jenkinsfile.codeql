@@ -17,5 +17,12 @@ pipeline {
                         userRemoteConfigs: [[url: 'https://github.com/KaranChadha10/codeql_poc.git']]])
             }
         }
+        stage('Build') {
+            steps {
+                // Build your ReactJS project
+                sh 'npm install' // Install dependencies
+                sh 'npm run build' // Build the project
+            }
+        }
     }
 }
