@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('CodeQL Analysis') {
+            steps {
+                echo "CodeQL analysis"
+                // script {
+                    // def codeqlExecutable = "path/to/codeql"
+
+                    // sh "${codeqlExecutable} database create --language=javascript MyCodeQLDatabase"
+                    // sh "${codeqlExecutable} database analyze MyCodeQLDatabase"
+                    // sh "${codeqlExecutable} database export sarif --output=codeql-results.sarif MyCodeQLDatabase"
+                //}
+            }
+        }
+    }
+}
